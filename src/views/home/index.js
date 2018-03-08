@@ -6,16 +6,19 @@ export class Home extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">home menu de usuario</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {/* component user data details */}
+        {/* condicional {
+  {/* component to list users from backend 
+    boton to add a new user
+        }*/}
+        <button onClick={() => this.props.logOut()}>Log Out</button>
       </div>
     );
   }
 }
 const mapStateToProps = state => {
-  return { applicationStore: state.applicationStore }
-}
-export default connect(mapStateToProps, actions)(Home)
+  return { applicationStore: state.applicationStore };
+};
+export default connect(mapStateToProps, actions)(Home);

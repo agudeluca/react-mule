@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import {applicationStore} from './applicationStore'
+import { applicationStore } from './applicationStore';
 
 const rootReducer = combineReducers({
-    applicationStore
+  applicationStore,
 });
 
 export default rootReducer;
