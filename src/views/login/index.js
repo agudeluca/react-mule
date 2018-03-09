@@ -1,6 +1,9 @@
 import React, { Component, Text } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/applicationStore';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import { styles } from '../../styles';
 export class Login extends Component {
   constructor(props) {
     super(props);
@@ -10,37 +13,41 @@ export class Login extends Component {
     };
   }
 
-  handleChangeUserName = event => {
-    console.log(event);
-    this.setState({ username: event.target.value });
-  };
-  handleChangePassword = event => {
-    console.log(event);
-    this.setState({ password: event.target.value });
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   handleSubmit = () => {
-    console.log('go');
     this.props.authenticate(this.state);
   };
   render() {
-    console.log(this);
     return (
-      <div>
+      <div style={styles.container}>
         <div>
-          <label>Name:</label>
+          <TextField
+            id="username"
+            hintText={!!this.state.username ? '' : 'UserName'}
+            value={this.state.value}
+            name="username"
+            onChange={this.handleChange}
+          />
         </div>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChangeUserName}
-        />
+
         <div>
-          <label>Password:</label>
+          <TextField
+            id="password"
+            type="password"
+            name="password"
+            hintText={!!this.state.password ? '' : 'Password'}
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
         </div>
-        <input type="password" onChange={this.handleChangePassword} />
+
         <div>
-          <button onClick={this.handleSubmit}>Enviar</button>
+          <RaisedButton style={{ width: '100%' }} onClick={this.handleSubmit}>
+            Enviar
+          </RaisedButton>
         </div>
       </div>
     );
