@@ -8,11 +8,6 @@ export class Home extends Component {
         <header className="App-header">
           <h1 className="App-title">home menu de usuario</h1>
         </header>
-        {/* component user data details */}
-        {/* condicional {
-  {/* component to list users from backend 
-    boton to add a new user
-        }*/}
         <button onClick={() => this.props.logOut()}>Log Out</button>
       </div>
     );

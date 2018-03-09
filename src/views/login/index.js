@@ -45,7 +45,7 @@ export class Login extends Component {
         </div>
 
         <div>
-          <RaisedButton style={{ width: '100%' }} onClick={this.handleSubmit}>
+          <RaisedButton style={styles.rowButton} onClick={this.handleSubmit}>
             Enviar
           </RaisedButton>
         </div>

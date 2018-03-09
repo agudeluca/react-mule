@@ -3,4 +3,5 @@ export const styles = {
     width: '257px',
     margin: '0 auto',
   },
+  rowButton: { width: '100%' },
 };
