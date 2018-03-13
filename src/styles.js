@@ -4,4 +4,8 @@ export const styles = {
     margin: '0 auto',
   },
   rowButton: { width: '100%' },
+
+  textAlign: {
+    'text-align': 'center'
+  }
 };
